@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<style>
+   .main{
+    text-align: center;
+    width: 30%;
+    height: 500px;
+    margin: auto;
+    border: 0px solid black;
+   }
+   .btn-g{
+    padding:15px 10px;
+    margin: 10px 20px;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+   }
+   .btn-g>img{
+    width: 5%;
+    margin-right: 5px;
+    align-items: center;
+   }
+   .main>h1{
+    margin: auto;
+    border-bottom: 1px solid black;
+    color: grey;
+   }
+   #in{
+    text-align: center;
+    width: 80%;
+    padding: 20px 15px;
+    margin: 21px 22px;
+   }
+   .btn-b{
+    width: 80%;
+    padding:15px 10px;
+    margin: 10px 20px;
+    color: white;
+    font-weight: bold;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(36, 28, 123);
+   }
+   a{
+    text-decoration: none;
+    color: black;
+   }
+
+</style>
+<body>
+    <div class="main">
+    <button class="btn-g"><img src="https://cdn-icons-png.flaticon.com/512/2504/2504739.png">Continue with Google</button>
+    <button class="btn-g"><img src="https://cdn-icons-png.flaticon.com/512/888/888841.png">Continue with Apple</button>
+    <h1>OR</h1>
+    <input id="in"
+    type="email" placeholder="Please Enter your Email and hit Enter">
+    <button class="btn-b">Log In</button>
+    <h4>Don't have an account?</h4>
+    <a href="signup.html"><h4>Sign In > </h4></a>
+    </div>
+</body>
+</html>
+<script>
+    document.querySelector(".btn-b").addEventListener("click",myFun);
+    function myFun(){
+        let val=document.querySelector("#in").value;
+        let comp=localStorage.getItem("value");
+        if(val==comp){
+            alert("Succesfully Logged In ");
+        }else{
+            alert("Not Matched ");
+        }
+        window.location.reload();
+    }
+</script>
